@@ -1,11 +1,14 @@
 import style from './Header.module.css'
 
-const headerName = "?"
+const headerName = "my Header name"
 
 export default function Header() {
     return (
-        <div>
-            <h1 className={style.Header}>{headerName}</h1>
-        </div>
+        <header>
+            <div className={style.header}>
+            <h1>{headerName}</h1>
+            <h1>toDo</h1>
+            </div>
+        </header>
     )
 }

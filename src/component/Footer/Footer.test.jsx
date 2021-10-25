@@ -4,7 +4,7 @@ import Footer from './Footer'
 const name = '@Agence Freya';
 
 test("print footer with name in footer", () => {
-    const rendered = (<Footer/>);
+    const rendered = render(<Footer/>);
 
     const nameResult = screen.getByText(name);
     

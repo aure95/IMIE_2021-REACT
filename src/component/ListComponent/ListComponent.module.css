@@ -1,0 +1,14 @@
+.listComponent {
+    color: white;
+    background-color: yellowgreen;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkbox {
+    width: 25%;
+    height: 25%;
+    background-color: tomato;
+}
