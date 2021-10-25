@@ -6,8 +6,8 @@ export default function Header() {
     return (
         <header>
             <div className={style.header}>
-            <h1>{headerName}</h1>
-            <h1>toDo</h1>
+                <h1>{headerName}</h1>
+                <h1 className={style.dot}>T</h1>
             </div>
         </header>
     )
