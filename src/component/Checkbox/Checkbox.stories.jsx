@@ -5,4 +5,5 @@ export default {
     component: Checkbox
 }
 
-export const normal = () => <Checkbox/>
+export const checked = () => <Checkbox checked={true}/>
+export const unchecked = () => <Checkbox checked={false}/>

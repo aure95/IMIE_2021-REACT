@@ -1,3 +1,15 @@
+.uncheck {
+    border: 1px solid red;
+    background-color: red;
+}
+
 .check {
-    color: black;
+    background-color: green;
+    border: 1px solid green;
+}
+
+.checkbox {
+    width: 25px;
+    height: 25px;
+    color: white;
 }

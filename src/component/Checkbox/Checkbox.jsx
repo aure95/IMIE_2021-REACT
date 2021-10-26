@@ -1,13 +1,14 @@
+import { useState } from "react"
 import style from './Checkbox.module.css'
 
-var state = true;
-
 export default function Checkbox() {
- return <div className={style.check} onclick={check()}>
-            {state}
-        </div>   
-}
 
-function check() {
-   state = !state;
+    const [check, setCheck] = useState(false); 
+
+    return (
+        <div className={`${check? style.check : style.uncheck} ${style.checkbox}`} onClick={() => setCheck(!check)} >
+            
+        </div>
+    )
+
 }
