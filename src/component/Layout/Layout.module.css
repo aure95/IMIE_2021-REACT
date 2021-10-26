@@ -1,0 +1,4 @@
+.layout_list_component {
+    display: flex;
+    flex-direction: column;
+}

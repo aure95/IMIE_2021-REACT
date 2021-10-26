@@ -1,0 +1,17 @@
+.unclicked {
+    background-color: purple;
+}
+
+.clicked {
+    background-color: green;  
+}
+
+.button_add {
+    color: white;
+    width: 200px;
+    height: 25px;
+    border-radius: 15px;
+    font-size: 30px;
+    vertical-align: baseline;
+    padding-bottom: 35px;
+}

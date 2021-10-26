@@ -9,4 +9,4 @@ test("print footer with name in footer", () => {
     const nameResult = screen.getByText(name);
     
     expect(nameResult).toBeInTheDocument();
-});
+});                 
