@@ -1,5 +1,7 @@
 import { mockComponent } from 'react-dom/test-utils';
+import Checkbox from '../Checkbox/Checkbox';
 import style from './ListComponent.module.css'
+
 
 const titleName = 'Default title name';
 const dateDefault = myDate();
@@ -15,7 +17,10 @@ export default function ListComponent(props) {
             <h5 >{props.name}</h5>
             <p> {dateDefault} </p>
         </div>
-        <div className={style.checkbox}></div>
+        <div className={style.checkbox}>
+          <Checkbox/>
+        </div>
+        {/* <div className={style.checkbox}></div> */}
     </div>
 }
 

@@ -8,7 +8,7 @@ export default function Layout(props) {
             <Header/>
             <p>Hello my Footer</p>
             <div>
-                <ListComponent name="hola"/>
+                <ListComponent name="hola"/> 
                 <ListComponent  name="nager piscine"/>
                 <ListComponent  name="faire courses"/>
             </div>
