@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { mockComponent } from 'react-dom/test-utils';
 import Checkbox from '../Checkbox/Checkbox';
-import style from './ListComponent.module.css'
+import style from './ListComponentElement.module.css'
 
 
 const titleName = 'Default title name';
@@ -17,7 +17,7 @@ function myDate() {
 // }
 
 
-export default function ListComponent(props) {
+export default function ListComponentElement(props) {
 
     const [check, setCheck] = useState(true)
 

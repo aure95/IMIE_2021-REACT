@@ -1,7 +1,7 @@
 import ButtonAdd from "../Checkbox/ButtonAdd/ButtonAdd";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
-import ListComponent from "../ListComponent/ListComponent";
+import ListComponentElement from "../ListComponentElement/ListComponentElement";
 import style from "./Layout.module.css"
 
 export default function Layout(props) {
@@ -12,9 +12,9 @@ export default function Layout(props) {
                 <ButtonAdd/>
             </div>
             <div className={style.layout_list_component}>
-                <ListComponent className={style.list_component} name="hola"/> 
-                <ListComponent className={style.list_component}  name="nager piscine"/>
-                <ListComponent className={style.list_component}  name="faire courses"/>
+                <ListComponentElement className={style.list_component} name="hola"/> 
+                <ListComponentElement className={style.list_component}  name="nager piscine"/>
+                <ListComponentElement className={style.list_component}  name="faire courses"/>
             </div>
             <div className={style.footer}>
                 <Footer/>
