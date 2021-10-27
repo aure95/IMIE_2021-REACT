@@ -23,7 +23,6 @@ export default function ListComponent(props) {
 
     const onCheck = () => setCheck(!check);
 
-
     return ( 
         <div className={`${style.task} ${check? style.checked : style.unchecked}`}>
         <div className={style.listComponent}>
