@@ -1,6 +1,9 @@
 import { useState } from 'react'
+import style from './MainPage.module.css'
 import Layout from '../Layout/Layout'
 import ListComponent from '../ListComponent/ListComponent';
+import ButtonAdd from '../Checkbox/ButtonAdd/ButtonAdd';
+
 
 export default function MainPage() {
 
@@ -14,10 +17,22 @@ export default function MainPage() {
 
     const [tasks, setTasks] = useState([]);
 
+    const content = () => {
+        return (
+            <div>
+                <div classname={style.button_add}>
+                    <ButtonAdd/>
+                </div>
+                <div>
+                    <ListComponent tasks={tasksMock}/>
+                </div>    
+            </div>
+        )
+    }
+
     return (
         <div>
-            <Layout component={<ListComponent tasks={tasksMock}/>}/>
+            <Layout component={content()}/>
         </div>
-        
-    )
+    );
 }

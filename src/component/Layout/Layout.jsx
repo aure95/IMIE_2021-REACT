@@ -8,9 +8,6 @@ export default function Layout(props) {
     return (
         <div>
             <Header/>
-            <div className={style.button_add}>
-                <ButtonAdd/>
-            </div>
             <div>
                 {props.component}
             </div>
