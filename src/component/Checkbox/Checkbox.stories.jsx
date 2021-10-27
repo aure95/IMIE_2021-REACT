@@ -5,5 +5,7 @@ export default {
     component: Checkbox
 }
 
-export const checked = () => <Checkbox checked={true}/>
-export const unchecked = () => <Checkbox checked={false}/>
+const mockCheck = () => {};
+
+export const checked = () => <Checkbox checked={true} onCheck={mockCheck}/>
+export const unchecked = () => <Checkbox checked={false} onCheck={mockCheck}/>

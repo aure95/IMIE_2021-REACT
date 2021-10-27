@@ -1,5 +1,5 @@
 import {screen, render} from '@testing-library/react';
-import {ButtonAdd} from './ButtonAdd'
+import ButtonAdd from './ButtonAdd'
 
 test("buttonAdd", () => {
     const rendered = render(<ButtonAdd/>);
