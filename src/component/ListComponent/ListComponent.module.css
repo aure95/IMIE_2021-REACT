@@ -1,10 +1,17 @@
 .listComponent {
-    color: white;
     margin: 20px;
     display: flex;
     align-content: left;
     flex-direction : column;
     color: black;
+}
+
+.checked {
+    background-color: green;
+}
+
+.unchecked {
+    background-color: violet;
 }
 
 .checkbox {
@@ -20,6 +27,5 @@
     display: flex;
     align-content: center;
     justify-content: space-between;   
-    background-color: beige;
     border-radius: 25px;
 }

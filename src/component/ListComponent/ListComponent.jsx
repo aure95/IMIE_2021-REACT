@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { mockComponent } from 'react-dom/test-utils';
 import Checkbox from '../Checkbox/Checkbox';
 import style from './ListComponent.module.css'
@@ -11,16 +12,29 @@ function myDate() {
     return 'Ajouté le ' + today.toLocaleString('en-FR');
 }
 
+// function onCheck(setCheck, check) {
+//     setCheck(check)
+// }
+
+
 export default function ListComponent(props) {
-    return <div className={style.task}>
+
+    const [check, setCheck] = useState(true)
+
+    const onCheck = () => setCheck(!check);
+
+
+    return ( 
+        <div className={`${style.task} ${check? style.checked : style.unchecked}`}>
         <div className={style.listComponent}>
             <h5 >{props.name}</h5>
             <p> {dateDefault} </p>
         </div>
         <div className={style.checkbox}>
-          <Checkbox/>
+            <Checkbox check={check} onCheck={onCheck}/>
         </div>
         {/* <div className={style.checkbox}></div> */}
     </div>
+    )
 }
 
