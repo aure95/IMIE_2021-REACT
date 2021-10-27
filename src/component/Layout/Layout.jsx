@@ -11,10 +11,8 @@ export default function Layout(props) {
             <div className={style.button_add}>
                 <ButtonAdd/>
             </div>
-            <div className={style.layout_list_component}>
-                <ListComponentElement className={style.list_component} name="hola"/> 
-                <ListComponentElement className={style.list_component}  name="nager piscine"/>
-                <ListComponentElement className={style.list_component}  name="faire courses"/>
+            <div>
+                {props.component}
             </div>
             <div className={style.footer}>
                 <Footer/>

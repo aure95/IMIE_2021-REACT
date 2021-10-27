@@ -12,11 +12,6 @@ function myDate() {
     return 'Ajouté le ' + today.toLocaleString('en-FR');
 }
 
-// function onCheck(setCheck, check) {
-//     setCheck(check)
-// }
-
-
 export default function ListComponentElement(props) {
 
     const [check, setCheck] = useState(true)
@@ -26,8 +21,11 @@ export default function ListComponentElement(props) {
     return ( 
         <div className={`${style.task} ${check? style.checked : style.unchecked}`}>
         <div className={style.listComponent}>
-            <h5 >{props.name}</h5>
-            <p> {dateDefault} </p>
+            <div className={style.text}>
+                <p>{props.name}</p>
+            {/* <p> {dateDefault} </p> */}
+                <p> {props.date} </p>
+            </div>
         </div>
         <div className={style.checkbox}>
             <Checkbox check={check} onCheck={onCheck}/>

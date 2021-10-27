@@ -4,6 +4,12 @@
     align-content: left;
     flex-direction : column;
     color: black;
+    font-size: 1em;
+}
+
+.text {
+    position: relative;
+    margin-left: 25px;
 }
 
 .checked {
