@@ -1,0 +1,9 @@
+.form {
+    border: solid violet 12px;
+    border-radius: 15px;
+}
+
+.form_element {
+    margin: 10px 10px 10px 10px;
+}
+

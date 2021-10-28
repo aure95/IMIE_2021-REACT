@@ -1,4 +1,5 @@
 import { useState, useEffect} from 'react'
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import style from './MainPage.module.css'
 import Layout from '../Layout/Layout'
 import ListComponent from '../ListComponent/ListComponent';
@@ -45,8 +46,6 @@ export default function MainPage() {
         )
     }
 
-    // render(<MainPage/>, document.getElementById('root'));
-
     return (
         <div>
             <Layout component={content()}/>
@@ -54,5 +53,3 @@ export default function MainPage() {
     );
 
 }
-
-// render(<MainPage/>, document.getElementById('root'));
