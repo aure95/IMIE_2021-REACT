@@ -2,25 +2,32 @@ import style from './TaskForm.module.css'
 
 export default function TaskForm(props) {
 
-    const onChange = () => {
+    const onChange = (event) => {
+        console.log(event)
         if (props.onChange != undefined) {
-            props.onChange();
+            props.onChange(event);
         }
     }
 
+    // const onSubmit = () => {
+    //     if (props.onSubmit != undefined) {
+    //         props.onSubmit();
+    //     }
+    // }
+
     return (
         <form className={style.form}>
-            {props.formTasks.map((formTask)=> {
+            {props.formTasks.map((formTask, index)=> {
                 return (
-                    <div className={style.form_element}>
-                        <label for={formTask.labelName}>{formTask.labelName}</label>
+                    <div key={index} className={style.form_element}>
+                        <label>{formTask.labelName}</label>
                         <br/>
-                        <input type={formTask.type} onChange={onChange()}/>
+                        <input type={formTask.type} onChange={onChange(this)}/>
                         <br/>
                     </div>
                 )
             }) }
-            <input  className={style.form_element} type="submit" value="send" />
+            <input  className={style.form_element} type="button" value="add a Task" onClick={()=> props.onClickButtonAddTask()} />
         </form>
     )
 }
