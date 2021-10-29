@@ -3,8 +3,15 @@ import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import style from './ListComponent.module.css'
 
 export default function ListComponent(props) {
+
+    const onDragEnd = (result) => {
+        if (props.onDragEnd) {
+            props.onDragEnd(result);
+        }
+    }
+
     return (
-        <DragDropContext>
+        <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="1">
         {(provided, snapshot) => (
             <div 

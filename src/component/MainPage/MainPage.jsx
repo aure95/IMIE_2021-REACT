@@ -100,6 +100,29 @@ export default function MainPage() {
         }
     }
 
+    const reorder = (list, startIndex, endIndex) => {
+        const result = Array.from(list);
+        const [removed] = result.splice(startIndex, 1);
+        result.splice(endIndex, 0, removed);
+        
+        return result;
+    };
+
+    const onDragEnd = (result) => {
+        // dropped outside the list
+        if (!result.destination) {
+            return;
+        }
+
+        const tasksCopy = reorder(
+            [...tasks],
+            result.source.index,
+            result.destination.index
+        );
+
+        setTasks(tasksCopy);
+    }   
+    
     const content = () => {
         if (isButtonAddClicked) {
             return (
@@ -114,8 +137,7 @@ export default function MainPage() {
                         <ButtonAdd classname={style.button_add} onClick={onClickButtonAdd}/>
                     </div>
                     <div>
-                            <ListComponent tasks={tasks}/>
-                        
+                        <ListComponent tasks={tasks} onDragEnd={onDragEnd}/>
                     </div>    
                 </div>
             )
