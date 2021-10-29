@@ -1,5 +1,5 @@
 import { useState, useEffect} from 'react'
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import { DragDropContext } from "react-beautiful-dnd";
 import style from './MainPage.module.css'
 import Layout from '../Layout/Layout'
 import ListComponent from '../ListComponent/ListComponent';
@@ -109,7 +109,9 @@ export default function MainPage() {
                         <ButtonAdd classname={style.button_add} onClick={onClickButtonAdd}/>
                     </div>
                     <div>
-                        <ListComponent tasks={tasks}/>
+                        <DragDropContext>
+                            <ListComponent tasks={tasks}/>
+                        </DragDropContext>
                     </div>    
                 </div>
             )
