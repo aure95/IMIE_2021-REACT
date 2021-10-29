@@ -8,7 +8,9 @@ const titleName = 'Default title name';
 const dateDefault = myDate();
 
 function generateUUID(props) {
-    return props.name + props.date + (Math.floor(Math.random() * 255)).toString();
+    let UUID = (props.name + props.date + (Math.floor(Math.random() * 255)).toString()).toString().replaceAll('', 'a' );
+    console.log(UUID);
+    return UUID;
 }
 
 function myDate() {
@@ -23,23 +25,20 @@ export default function ListComponentElement(props) {
     const onCheck = () => setCheck(!check);
 
     return ( 
-        <Draggable draggableId={generateUUID(props)} index={props.index}>
-            {(provided) => (
-            <div  ref={provided.innerRef} className={`${style.task} ${check? style.checked : style.unchecked}`}>
-                <div className={style.listComponent}>
-                    <div className={style.text}>
-                        <p>{props.name}</p>
-                    {/* <p> {dateDefault} </p> */}
-                        <p> {props.date} </p>
-                    </div>
+        <div className={`${style.task} ${check? style.checked : style.unchecked}`}>
+            <div className={style.listComponent}>
+                <div className={style.text}>
+                    <p>{props.name}</p>
+                {/* <p> {dateDefault} </p> */}
+                    <p> {props.date} </p>
                 </div>
-                <div className={style.checkbox}>
-                    <Checkbox check={check} onCheck={onCheck}/>
-                </div>
-                {/* <div className={style.checkbox}></div> */}
             </div>
-            )}
-        </Draggable>
+            <div className={style.checkbox}>
+                <Checkbox check={check} onCheck={onCheck}/>
+            </div>
+            {/* <div className={style.checkbox}></div> */}
+        </div>
     )
+    
 }
 

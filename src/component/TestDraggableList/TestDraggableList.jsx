@@ -12,7 +12,6 @@ export default function TestDraggableList() {
             itemsTemp['id'] = 'item' + k.toString()
             itemsTemp['content'] = 'content' + k.toString()
             itemsGenerated.push(itemsTemp);
-            console.log("ta mere")
         }
         return itemsGenerated;
     };
@@ -71,6 +70,7 @@ const onDragEnd = (result) => {
 
     return (
       <DragDropContext onDragEnd={onDragEnd}>
+        <span>DragDropContext</span>
         <Droppable droppableId="droppable">
           {(provided, snapshot) => (
             <div
@@ -78,6 +78,7 @@ const onDragEnd = (result) => {
               ref={provided.innerRef}
               style={getListStyle(snapshot.isDraggingOver)}
             >
+            <span>Droppable</span>
               {items.map((item, index) => {
                 return (
                     <Draggable key={item.id} draggableId={item.id} index={index}>
@@ -91,6 +92,8 @@ const onDragEnd = (result) => {
                             provided.draggableProps.style
                         )}
                         >
+                        <span>Draggable</span>
+                        <br/>
                         {item.content}
                         </div>
                     )}

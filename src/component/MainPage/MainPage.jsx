@@ -7,11 +7,11 @@ import ButtonAdd from '../Checkbox/ButtonAdd/ButtonAdd';
 import TaskForm from '../TaskForm/TaskForm';
 
 const tasksMock =  [
-        {name: 'piscine', date:'27/10/2021 10:30'},
-        {name: 'paintball', date:'27/10/2021 14:00'},
-        {name: 'escalade', date:'28/10/2021 10:30'},
-        {name: 'macdo', date:'28/10/2021 12:30'},
-        {name: 'ciné', date:'29/10/2021 15:00'},
+        {id: '0', name: 'piscine', date:'27/10/2021 10:30'},
+        {id: '1', name: 'paintball', date:'27/10/2021 14:00'},
+        {id: '2', name: 'escalade', date:'28/10/2021 10:30'},
+        {id: '3', name: 'macdo', date:'28/10/2021 12:30'},
+        {id: '4', name: 'ciné', date:'29/10/2021 15:00'},
     ]
 
 const formTasks = [
@@ -65,6 +65,10 @@ export default function MainPage() {
         setTasks(tasksCopy);
     },[])
 
+    const generateId = () => {
+        return (tasks.length).toString();
+    }
+
     function RAZformTaskCreated() {
         setTaskCreated({});
     }
@@ -87,6 +91,7 @@ export default function MainPage() {
             setButtonAddClicked(!isButtonAddClicked);
             var tasksCopy = [...tasks];
             var formTaskConverted = toFormTask(taskCreatedCopy)
+            formTaskConverted['id'] = generateId()
             tasksCopy.push(formTaskConverted);
             setTasks(tasksCopy);
             RAZformTaskCreated();
@@ -109,9 +114,8 @@ export default function MainPage() {
                         <ButtonAdd classname={style.button_add} onClick={onClickButtonAdd}/>
                     </div>
                     <div>
-                        <DragDropContext>
                             <ListComponent tasks={tasks}/>
-                        </DragDropContext>
+                        
                     </div>    
                 </div>
             )

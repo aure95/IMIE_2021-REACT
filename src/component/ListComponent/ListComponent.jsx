@@ -1,24 +1,40 @@
 import ListComponentElement from "../ListComponentElement/ListComponentElement";
-import { Droppable } from "react-beautiful-dnd";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import style from './ListComponent.module.css'
 
 export default function ListComponent(props) {
     return (
-        <div>
+        <DragDropContext>
         <Droppable droppableId="1">
-        {(provided) => (
-        <div>
-        <ul className={style.ul} ref={provided.innerRef}>
-                {props.tasks.map(
-                    (task, index) => {
-                        return (
-                            <li><ListComponentElement className={style.element} key={index} name={task.name} date={task.date}/></li>
-                        )
-                    }
-                )}
-        </ul>
-        </div> )} 
+        {(provided, snapshot) => (
+            <div 
+                ref={provided.innerRef}
+                {...provided.droppableProps}
+            >
+                <ul className={style.ul}>
+                    {props.tasks.map(
+                        (task, index) => {
+                            return (
+                                <Draggable key={task.id} draggableId={task.id} index={index}>
+                                {(provided, snapshot) => (
+                                    <div  
+                                        ref={provided.innerRef}
+                                        {...provided.draggableProps}
+                                        {...provided.dragHandleProps}
+                                    >
+                                        <li>
+                                            <ListComponentElement className={style.element} key={index} name={task.name} date={task.date}/>
+                                        </li>
+                                    </div>
+                                )}
+                                </Draggable>
+                            )
+                        }
+                    )}
+                </ul>
+            </div> 
+        )} 
         </Droppable>
-        </div>
+        </DragDropContext>
     );
 }
