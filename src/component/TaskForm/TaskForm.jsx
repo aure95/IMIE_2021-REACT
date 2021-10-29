@@ -3,7 +3,6 @@ import style from './TaskForm.module.css'
 export default function TaskForm(props) {
 
     const onChange = (event) => {
-        console.log(event)
         if (props.onChange != undefined) {
             props.onChange(event);
         }
@@ -22,12 +21,12 @@ export default function TaskForm(props) {
                     <div key={index} className={style.form_element}>
                         <label>{formTask.labelName}</label>
                         <br/>
-                        <input type={formTask.type} onChange={onChange(this)}/>
+                        <input type={formTask.type} name={formTask.labelName} onChange={onChange}/>
                         <br/>
                     </div>
                 )
             }) }
-            <input  className={style.form_element} type="button" value="add a Task" onClick={()=> props.onClickButtonAddTask()} />
+            <input  className={style.form_element} type="button" value="add a Task" onClick={() => props.onClickButtonAddTask()} />
         </form>
     )
 }
